@@ -40,7 +40,7 @@ class CalendarHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = headerStyle.titleTextFormatter?.call(focusedMonth, locale) ??
-        DateFormat.yMMMM(locale).format(focusedMonth);
+        DateFormat.M(locale).format(focusedMonth);
 
     return Container(
       decoration: headerStyle.decoration,
@@ -61,29 +61,37 @@ class CalendarHeader extends StatelessWidget {
                 GestureDetector(
                   onTap: onHeaderTap,
                   onLongPress: onHeaderLongPress,
-                  child: Text(
-                    text,
-                    style: headerStyle.titleTextStyle,
-                    textAlign: headerStyle.titleCentered
-                        ? TextAlign.center
-                        : TextAlign.start,
+                  child: Column(
+                    children: [
+                      Text(
+                        text,
+                        style: TextStyle(color: Color(0xFF222B45), fontWeight: FontWeight.w500, fontSize: 20),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        focusedMonth.year.toString(),
+                        style: TextStyle(color: Color(0xFF8F9BB3), fontWeight: FontWeight.w500, fontSize: 12),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
           ),
-          if (headerStyle.formatButtonVisible &&
-              availableCalendarFormats.length > 1)
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: FormatButton(
-                onTap: onFormatButtonTap,
-                availableCalendarFormats: availableCalendarFormats,
-                calendarFormat: calendarFormat,
-                decoration: headerStyle.formatButtonDecoration,
-                padding: headerStyle.formatButtonPadding,
-                textStyle: headerStyle.formatButtonTextStyle,
-                showsNextFormat: headerStyle.formatButtonShowsNext,
-              ),
-            ),
+          // if (headerStyle.formatButtonVisible &&
+          //     availableCalendarFormats.length > 1)
+          //   Padding(
+          //     padding: const EdgeInsets.only(left: 8.0),
+          //     child: FormatButton(
+          //       onTap: onFormatButtonTap,
+          //       availableCalendarFormats: availableCalendarFormats,
+          //       calendarFormat: calendarFormat,
+          //       decoration: headerStyle.formatButtonDecoration,
+          //       padding: headerStyle.formatButtonPadding,
+          //       textStyle: headerStyle.formatButtonTextStyle,
+          //       showsNextFormat: headerStyle.formatButtonShowsNext,
+          //     ),
+          //   ),
           if (headerStyle.rightChevronVisible)
             CustomIconButton(
               icon: headerStyle.rightChevronIcon,

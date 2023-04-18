@@ -29,7 +29,7 @@ class CustomIconButton extends StatelessWidget {
               (platform == TargetPlatform.iOS ||
                   platform == TargetPlatform.macOS)
           ? Container(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(7.0),
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 2),
               borderRadius: BorderRadius.circular(15)
@@ -47,7 +47,7 @@ class CustomIconButton extends StatelessWidget {
                   border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 2),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.all(7.0),
                 child: icon,
               ),
             ),

@@ -29,10 +29,10 @@ class CustomIconButton extends StatelessWidget {
               (platform == TargetPlatform.iOS ||
                   platform == TargetPlatform.macOS)
           ? Container(
-            padding: padding,
+            padding: const EdgeInsets.all(5.0),
             decoration: BoxDecoration(
-              border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 1),
-              borderRadius: BorderRadius.circular(25)
+              border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 2),
+              borderRadius: BorderRadius.circular(15)
             ),
             child: CupertinoButton(
                 onPressed: onTap,
@@ -44,10 +44,10 @@ class CustomIconButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(100.0),
               child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 1),
-                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 2),
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                padding: padding,
+                padding: const EdgeInsets.all(5.0),
                 child: icon,
               ),
             ),

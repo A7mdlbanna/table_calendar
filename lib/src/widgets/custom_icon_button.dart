@@ -16,7 +16,7 @@ class CustomIconButton extends StatelessWidget {
     required this.icon,
     required this.onTap,
     this.margin = const EdgeInsets.all(0.0),
-    this.padding = const EdgeInsets.all(8.0),
+    this.padding = const EdgeInsets.all(2.0),
   }) : super(key: key);
 
   @override
@@ -32,7 +32,7 @@ class CustomIconButton extends StatelessWidget {
             padding: padding,
             decoration: BoxDecoration(
               border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 1),
-              borderRadius: BorderRadius.circular(15)
+              borderRadius: BorderRadius.circular(25)
             ),
             child: CupertinoButton(
                 onPressed: onTap,
@@ -44,8 +44,8 @@ class CustomIconButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(100.0),
               child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5)),
-                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(color: Color(0xFFCED3DE).withOpacity(0.5), width: 1),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 padding: padding,
                 child: icon,
